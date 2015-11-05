@@ -37,11 +37,11 @@
 					res[0]=parseInt(list[i]);
 				} else {
 					var key = list[i].split("x");
-					res[parseGood(key[1])]=parseGood(key[2]);
+					res[parseGood(key[1])]=parseGood(key[0]);
 				}
 			} else {
 				var key = list[i].split("x^");
-				res[parseGood(key[1])]=parseGood(key[2]);
+				res[parseGood(key[1])]=parseGood(key[0]);
 			}
 		}
 		for (var ii=0; ii<res.length; ii++){
@@ -50,6 +50,11 @@
 			}
 		}
 		poli = res;
+	}
+	function grupo(po){
+		for (var a=0; a<100; a++){
+
+		}
 	}
 	function convert(){
 		pol(ventana.value);
