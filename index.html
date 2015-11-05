@@ -68,12 +68,12 @@
 			return -1;
 		}
 		pa = [];
-		for (var a=1; a<n; a++){
-			pa = 0;
+		for (var a=0; a<n; a++){
+			pa[a] = 0;
 		}
 		pa[0]=1;
 		for (var a=1; a<100; a++){
-			coef = pa[n];
+			coef = pa[n-1];
 			for (var b=1; b<n; b++){
 				pa[n - b]=pa[n - b - 1];
 			}
