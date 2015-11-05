@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<title>Polinomios M&aacute;gicos</title>
+</head>
+<body>
+	<table>
+	</table>
+	<script type="text/javascript">
+	function pol(wor){
+		var res=[];
+		check = wor.search("x");
+		while (check!= -1){
+			var coef;
+			var pos = check - 1;
+			if (check==0){
+				coef=1;
+			} else {
+				if (wor.charAt(check - 1)=="-"){
+					coef = -1;
+				} else {
+					if (wor.charAt(check - 1)=="+" || wor.charAt(check - 1)==" "){
+						coef = 1;
+					} else {
+						while (wor.charAt(pos)!=" "){
+							pos--;
+						}
+						coef = parseInt(wor.slice(pos + 1, check));
+					}
+				}
+			}
+			var gra;
+			var end=check + 1;
+			if (wor.charAt(check + 1)==" "){
+				gra = 1;
+			} else {
+				while (wor.charAt(end)!=" "){
+					end++;
+				}
+				gra = parseInt(wor.splice(check + 2, end));
+			}
+			res[gra]=coef;
+			check = wor.search("x");
+		}
+		return res;
+	}
+	console.log(pol(x^2 - x + 1));
+	</script>
+</body>
