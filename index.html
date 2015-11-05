@@ -40,7 +40,7 @@
 				gra = parseInt(wor.slice(check + 2, end));
 			}
 			res[gra]=coef;
-			wor = concat(wor.slice(0, pos), wor.slice(end));
+			wor = wor.slice(0, pos).concat(wor.slice(end));
 			check = wor.search("x");
 		}
 		return res;
