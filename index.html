@@ -9,15 +9,19 @@
 			<td>
 				<input id="polin" type="text">
 			</td>
-			<td><input id="boton" type"button" value="Convertir" onclick="convert()"></td>
-			<td>
-				<p id="resul"></p>
-			</td>
+			<td><input type"button" value="Convertir" onclick="convert()"></td>
+			<td><p id="lienzo1"></p></td>
+		</tr>
+		<tr>
+			<td>Orden del grupo:</td>
+			<td><p id="lienzo2"></p></td>
+			<td><input type"button" value="Calcular" onclick="grupcal()"></td>
 		</tr>
 	</table>
 	<script type="text/javascript">
 	var ventana=document.getElementById("polin");
-	var lienzo=document.getElementById("resul");
+	var lienzo2=document.getElementById("lienzo2");
+	var lienzo=document.getElementById("lienzo1");
 	var poli=[];
 	function parseGood(str){
 		if (str=="+" || str==""){
@@ -92,6 +96,9 @@
 		pol(ventana.value);
 		lienzo.innerHTML = poli;
 		console.log(poli);
+	}
+	function grupcal(){
+		lienzo2.innerHTML = grupo(poli);
 	}
 	</script>
 </body>
