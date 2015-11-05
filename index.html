@@ -37,7 +37,7 @@
 				while (wor.charAt(end)!=" "){
 					end++;
 				}
-				gra = parseInt(wor.splice(check + 2, end));
+				gra = parseInt(wor.slice(check + 2, end));
 			}
 			res[gra]=coef;
 			check = wor.search("x");
