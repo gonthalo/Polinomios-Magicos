@@ -67,6 +67,7 @@
 		return true;
 	}
 	function grupo(po){
+		console.log("calculando grupo")
 		n = po.length - 1;
 		if (po[n]!=1){
 			return -1;
@@ -95,6 +96,7 @@
 	function convert(){
 		pol(ventana.value);
 		lienzo.innerHTML = poli;
+		console.log("convirtiendo");
 		console.log(poli);
 	}
 	function grupcal(){
