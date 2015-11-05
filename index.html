@@ -5,8 +5,18 @@
 </head>
 <body>
 	<table>
+		<tr>
+			<td>
+				<input id="polin" type="text">
+			</td>
+			<td>
+				<p id="resul"></p>
+			</td>
+		</tr>
 	</table>
 	<script type="text/javascript">
+	var ventana=document.getElementById("polin");
+	var lienzo=document.getElementById("resul");
 	function pol(wor){
 		var res=[];
 		check = wor.search("x");
@@ -34,7 +44,7 @@
 			if (wor.charAt(check + 1)==" "){
 				gra = 1;
 			} else {
-				while (wor.charAt(end)!=" " && end<wor.length){
+				while (wor.charAt(end)!=" " && wor.length>end){
 					end++;
 				}
 				gra = parseInt(wor.slice(check + 2, end));
@@ -45,6 +55,8 @@
 		}
 		return res;
 	}
-	console.log(pol("x^2 - x + 1"));
+	function convert(){
+		lienzo.innerHTML = pol(ventana.value);
+	}
 	</script>
 </body>
