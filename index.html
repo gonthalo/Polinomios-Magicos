@@ -51,10 +51,41 @@
 		}
 		poli = res;
 	}
-	function grupo(po){
-		for (var a=0; a<100; a++){
-
+	function isid(lis){
+		if (lis[0]!=1){
+			return false;
 		}
+		for (var ii=1; ii<lis.length; ii++){
+			if (lis[ii]!=0){
+				return false;
+			}
+		}
+		return true;
+	}
+	function grupo(po){
+		n = po.length - 1;
+		if (po[n]!=1){
+			return -1;
+		}
+		pa = [];
+		for (var a=1; a<n; a++){
+			pa = 0;
+		}
+		pa[0]=1;
+		for (var a=1; a<100; a++){
+			coef = pa[n];
+			for (var b=1; b<n; b++){
+				pa[n - b]=pa[n - b - 1];
+			}
+			pa[0]=0;
+			for (var b=0; b<n; b++){
+				pa[b]=pa[b]-coef*po[b];
+			}
+			if (isid(pa)){
+				return a;
+			}
+		}
+		return 0;
 	}
 	function convert(){
 		pol(ventana.value);
