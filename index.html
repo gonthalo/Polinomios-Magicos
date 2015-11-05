@@ -9,6 +9,7 @@
 			<td>
 				<input id="polin" type="text">
 			</td>
+			<td><input id="boton" type"button" value="Convertir" onclick="convert()"></td>
 			<td>
 				<p id="resul"></p>
 			</td>
@@ -17,6 +18,7 @@
 	<script type="text/javascript">
 	var ventana=document.getElementById("polin");
 	var lienzo=document.getElementById("resul");
+	var poli=[];
 	function parseGood(str){
 		if (str=="+" || str==""){
 			return 1;
@@ -47,10 +49,12 @@
 				res[ii] = 0;
 			}
 		}
-		return res;
+		poli = res;
 	}
 	function convert(){
-		lienzo.innerHTML = pol(ventana.value);
+		pol(ventana.value);
+		lienzo.innerHTML = poli;
+		console.log(poli);
 	}
 	</script>
 </body>
