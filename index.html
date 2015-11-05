@@ -34,7 +34,7 @@
 			if (wor.charAt(check + 1)==" "){
 				gra = 1;
 			} else {
-				while (wor.charAt(end)!=" "){
+				while (wor.charAt(end)!=" " && end<wor.length){
 					end++;
 				}
 				gra = parseInt(wor.slice(check + 2, end));
